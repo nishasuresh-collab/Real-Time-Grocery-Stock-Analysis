@@ -20,7 +20,13 @@ python prepare_grozi_yolo.py
 ```
 This converts the Grozi dataset into YOLO-style files (labels and `data.yaml`) used for training.
 
-2. Run the real-time pipeline (example):
+3. finetune yolo (if required):
+```powershell
+python train_grozi_yolo.py
+```
+This finetunes yolo on the 120 grozi classes.
+
+2. Run the real-time pipeline:
 ```powershell
 python src\realtime_grozi_pipeline.py
 ```
