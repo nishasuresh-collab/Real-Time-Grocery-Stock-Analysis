@@ -5,7 +5,6 @@ Requirements
 - pip
 - Recommended Python packages: ultralytics, opencv-python, pandas, pyyaml
 - (Optional) PyTorch installed for model training/inference. Install PyTorch following the instructions at https://pytorch.org for your platform.
-- (Optional) Git LFS if you plan to store model weight files in the repo
 
 Install dependencies (example, run in PowerShell)
 ```powershell
