@@ -1,0 +1,11 @@
+# ignore environment folders and caches
+venv/
+__pycache__/
+.idea/
+.vscode/
+*.pyc
+
+
+# system files
+.DS_Store
+Thumbs.db
