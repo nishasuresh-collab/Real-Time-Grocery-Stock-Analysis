@@ -4,9 +4,11 @@ import time
 import platform
 from datetime import datetime
 from pyspark.sql import SparkSession
+from pyspark.sql.functions import expr
 from pyspark.sql.functions import (
-    col, count, avg, window, current_timestamp, 
-    from_json, to_timestamp, lit
+    col, count, avg, window, current_timestamp,
+    from_json, to_timestamp, lit,
+    when, greatest
 )
 from pyspark.sql.types import (
     StructType, StructField, StringType, 
