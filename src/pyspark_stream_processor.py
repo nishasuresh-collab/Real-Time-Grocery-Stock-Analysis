@@ -142,41 +142,58 @@ def log_metrics(batch_df, batch_id):
     This demonstrates basic processing and metric extraction.
     """
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    
-    if not batch_df.head(1):
-        print(f"[Batch {batch_id}] Empty batch at {datetime.now():%Y-%m-%d %H:%M:%S}")
+
+    if batch_df.isEmpty():
+        print(f"[Batch {batch_id}] Empty batch at {timestamp}")
         return
-    
+
     try:
-        # Collect basic statistics
         total_detections = batch_df.count()
         avg_confidence = batch_df.agg(avg("confidence")).collect()[0][0]
         unique_products = batch_df.select("product_name").distinct().count()
-        
-        # Log to console
+
+        # Latency stats (only for rows where latency is not null)
+        latency_stats = batch_df.select("e2e_latency_ms").where(col("e2e_latency_ms").isNotNull())
+        if not latency_stats.isEmpty():
+            lat_row = latency_stats.agg(
+                avg("e2e_latency_ms").alias("avg_ms")
+            ).collect()[0]
+            avg_latency_ms = float(lat_row["avg_ms"]) if lat_row["avg_ms"] is not None else None
+        else:
+            avg_latency_ms = None
+
         print(f"\n{'='*70}")
         print(f"[Batch {batch_id}] Processed at {timestamp}")
         print(f"  Total Detections: {total_detections}")
         print(f"  Average Confidence: {avg_confidence:.4f}")
+        if avg_latency_ms is not None:
+            print(f"  Avg E2E Latency: {avg_latency_ms:.1f} ms")
+        else:
+            print(f"  Avg E2E Latency: N/A")
         print(f"  Unique Products: {unique_products}")
         print(f"{'='*70}\n")
-        
+
+        # Simple latency alert (tune threshold as you like)
+        LATENCY_ALERT_MS = 2000
+        if avg_latency_ms is not None and avg_latency_ms > LATENCY_ALERT_MS:
+            print(f"[WARN] Avg E2E Latency {avg_latency_ms:.1f} ms exceeds {LATENCY_ALERT_MS} ms.")
+
         # Write metrics to log file
         log_file = os.path.join(METRICS_LOG_DIR, f"batch_metrics.log")
         with open(log_file, "a") as f:
             f.write(f"{timestamp} | Batch {batch_id} | "
                     f"Detections: {total_detections} | "
-                    f"Avg Confidence: {avg_confidence:.4f} | "
-                    f"Unique Products: {unique_products}\n")
-        
-        # Show top products in this batch
-        print(f"[Batch {batch_id}] Top products in this batch:")
+                    f"AvgConf: {avg_confidence:.4f} | "
+                    f"AvgLatencyMs: {avg_latency_ms if avg_latency_ms is not None else 'NA'} | "
+                    f"UniqueProducts: {unique_products}\n")
+
+        # Top products (unchanged)
         product_counts = batch_df.groupBy("product_name", "class_id") \
             .agg(count("*").alias("count"), avg("confidence").alias("avg_conf")) \
             .orderBy(col("count").desc())
-        
+        print(f"[Batch {batch_id}] Top products in this batch:")
         product_counts.show(5, truncate=False)
-        
+
     except Exception as e:
         print(f"[Batch {batch_id}] Error processing batch: {e}")
 
@@ -212,9 +229,21 @@ def create_streaming_query(spark):
         parsed_stream = raw_stream \
             .withColumn("event_time", to_timestamp(col("timestamp"), "yyyy-MM-dd'T'HH:mm:ss")) \
             .withColumn("processing_time", current_timestamp())
+
+        # Compute latency in milliseconds (guard against null/negative)
+        enriched_stream = parsed_stream \
+            .withColumn(
+                "e2e_latency_ms",
+                when(col("event_time").isNotNull(),
+                    (col("processing_time").cast("long") - col("event_time").cast("long")) * lit(1000))
+                .otherwise(lit(None).cast("long"))
+            ) \
+            .withColumn("e2e_latency_ms", greatest(col("e2e_latency_ms"), lit(0))) \
+            .withWatermark("event_time", "30 seconds")
+
         
         # Basic transformation: filter out low confidence detections
-        filtered_stream = parsed_stream.filter(col("confidence") > 0.1)
+        filtered_stream = enriched_stream.filter((col("confidence") > 0.1) & col("event_time").isNotNull())
         
         print(f"[Stream] ✓ Transformations applied")
         print(f"[Stream] Starting query with trigger interval: {TRIGGER_INTERVAL}")
