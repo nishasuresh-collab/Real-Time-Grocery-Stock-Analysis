@@ -14,7 +14,7 @@ from pyspark.sql.types import (
 )
 
 # Configuration
-JSON_INPUT_DIR = "stream_output_json"
+JSON_INPUT_DIR = "../stream_output_json"
 CHECKPOINT_DIR = "spark_checkpoint"
 METRICS_LOG_DIR = "spark_metrics_logs"
 WINDOW_DURATION = "10 seconds"
