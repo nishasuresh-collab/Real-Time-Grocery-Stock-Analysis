@@ -143,8 +143,8 @@ def log_metrics(batch_df, batch_id):
     """
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
-    if batch_df.isEmpty():
-        print(f"[Batch {batch_id}] Empty batch at {timestamp}")
+    if not batch_df.head(1):
+        print(f"[Batch {batch_id}] Empty batch at {datetime.now():%Y-%m-%d %H:%M:%S}")
         return
     
     try:
@@ -203,13 +203,14 @@ def create_streaming_query(spark):
             .format("json") \
             .schema(detection_schema) \
             .option("maxFilesPerTrigger", 10) \
+            .option("multiLine", "true") \
             .load(JSON_INPUT_DIR)
         
         print(f"[Stream] ✓ Stream source configured")
         
         # Parse timestamp and add processing time
         parsed_stream = raw_stream \
-            .withColumn("event_time", to_timestamp(col("timestamp"))) \
+            .withColumn("event_time", to_timestamp(col("timestamp"), "yyyy-MM-dd'T'HH:mm:ss")) \
             .withColumn("processing_time", current_timestamp())
         
         # Basic transformation: filter out low confidence detections
