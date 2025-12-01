@@ -35,7 +35,7 @@ def simulate_feed(feed_id, src_folder):
 
     print(feed_id, " finished sending", count, "frames")
 
-def run_all_feeds():
+def run_all_feeds(FEEDS):
     # running feeds in parallel
     if USE_MULTIPROCESS:
         processes = []

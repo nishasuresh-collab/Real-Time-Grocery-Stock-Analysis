@@ -3,16 +3,56 @@ import time
 import json
 import torch
 import threading
+import shutil
 from datetime import datetime
 from ultralytics import YOLO
 from src.constants import *
 from src.feed_simulator import run_all_feeds
 from src.helper import clean_dir, reset_log
 
+import argparse
+from src.constants import ALL_FEEDS
+
+
 MODEL_PATH = "runs/classify/grozi_cls_v8n_aug10/weights/best.pt"
 UPC_INDEX_PATH = "UPC_index.txt"
 JSON_OUT_DIR = "stream_output_json"
 SLEEP_INTERVAL = 1.0
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--num_feeds", type=int, default=1,
+                    help="Number of camera feeds to simulate")
+args = parser.parse_args()
+
+# Validate & build FEEDS
+NUM_FEEDS = min(max(args.num_feeds, 1), len(ALL_FEEDS))
+FEEDS = {
+    f"feed_{i+1}": ALL_FEEDS[i]
+    for i in range(NUM_FEEDS)
+}
+
+print(f"[Config] Using {NUM_FEEDS} feeds: {FEEDS}")
+
+print(f"[Config] Using {NUM_FEEDS} feeds:")
+for k, v in FEEDS.items():
+    print(f"  {k} -> {v}")
+
+# ====================================
+# CLEAN SPARK CHECKPOINT & METRIC LOGS
+# ====================================
+def safe_delete(path):
+    if os.path.exists(path):
+        shutil.rmtree(path)
+        print(f"[Cleanup] Removed: {path}")
+
+# Remove logs created by PySpark
+safe_delete("spark_checkpoint")
+safe_delete("spark_metrics_logs")
+
+# Remove logs if Spark writes inside src/
+safe_delete("src/spark_checkpoint")
+safe_delete("src/spark_metrics_logs")
+
 
 def load_upc_mapping(path):
     mapping = {}
@@ -88,7 +128,7 @@ def main():
     print(f"Using {device.upper()} ({torch.cuda.get_device_name(0) if device=='cuda' else 'CPU only'})")
 
     stop_event = threading.Event()
-    feed_thread = threading.Thread(target=run_all_feeds, daemon=True)
+    feed_thread = threading.Thread(target=run_all_feeds, args=(FEEDS,), daemon=True)
     feed_thread.start()
     print("[Main] Feed simulation started.")
 
