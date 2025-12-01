@@ -14,13 +14,13 @@ from pyspark.sql.types import (
     StructType, StructField, StringType, 
     IntegerType, DoubleType, TimestampType
 )
+from delta import configure_spark_with_delta_pip
 
 # Configuration
 JSON_INPUT_DIR = "../stream_output_json"
 CHECKPOINT_DIR = "spark_checkpoint"
 METRICS_LOG_DIR = "spark_metrics_logs"
-WINDOW_DURATION = "10 seconds"
-SLIDE_DURATION = "5 seconds"
+WINDOW_DURATION = "30 seconds"
 TRIGGER_INTERVAL = "2 seconds"
 
 # Define schema for incoming JSON detection records
@@ -110,13 +110,17 @@ def initialize_spark():
             .config("spark.driver.bindAddress", "127.0.0.1")
     
     # Common configurations
-    builder = builder \
-        .config("spark.sql.streaming.schemaInference", "false") \
-        .config("spark.sql.shuffle.partitions", "2") \
-        .config("spark.sql.streaming.forceDeleteTempCheckpointLocation", "true") \
-        .config("spark.ui.enabled", "false")
+    builder = (
+        SparkSession.builder
+        .appName("GroZiStreamProcessor")
+        .master("local[*]")
+        .config("spark.sql.shuffle.partitions", "2")
+        .config("spark.sql.streaming.checkpointLocation", CHECKPOINT_DIR)
+        .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
+        .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
+    )
     
-    spark = builder.getOrCreate()
+    spark = configure_spark_with_delta_pip(builder).getOrCreate()
     spark.sparkContext.setLogLevel("WARN")
     
     print(f"[Spark] ✓ Initialized successfully")
@@ -276,6 +280,62 @@ def create_streaming_query(spark):
         
         raise
 
+def create_windowed_aggregation_query(spark):
+
+    print(f"\n[WindowStream] Configuring windowed aggregation stream...")
+    print(f"[WindowStream] Reading from: {os.path.abspath(JSON_INPUT_DIR)}")
+
+    if not os.path.exists(JSON_INPUT_DIR):
+        os.makedirs(JSON_INPUT_DIR, exist_ok=True)
+        print(f"[WindowStream] Created input directory: {JSON_INPUT_DIR}")
+
+    raw_stream = (
+        spark.readStream
+            .format("json")
+            .schema(detection_schema)
+            .option("maxFilesPerTrigger", 10)
+            .option("multiLine", "true")
+            .load(JSON_INPUT_DIR)
+    )
+
+    parsed_stream = raw_stream.withColumn(
+        "event_time", to_timestamp(col("timestamp"), "yyyy-MM-dd'T'HH:mm:ss")
+    )
+
+    # ✔ Tumbling window (required for append mode)
+    windowed = (
+        parsed_stream
+            .withWatermark("event_time", "30 seconds")
+            .groupBy(
+                window(col("event_time"), WINDOW_DURATION),
+                col("product_name")
+            )
+            .agg(
+                count("*").alias("count"),
+                avg("confidence").alias("avg_conf")
+            )
+    )
+
+    window_checkpoint_dir = "window_checkpoint"
+    window_output_dir = "window_output"
+    os.makedirs(window_output_dir, exist_ok=True)
+
+    query = (
+        windowed.writeStream
+            .outputMode("append")              # <-- required fix
+            .format("delta")                    # <-- keep Delta
+            .option("checkpointLocation", window_checkpoint_dir)
+            .option("path", window_output_dir)
+            .trigger(processingTime=TRIGGER_INTERVAL)
+            .start()
+    )
+
+    print(f"[WindowStream] ✓ Windowed aggregation query started")
+    print(f"[WindowStream] Checkpoint: {os.path.abspath(window_checkpoint_dir)}")
+    print(f"[WindowStream] Output: {os.path.abspath(window_output_dir)}")
+
+    return query
+
 def print_stream_status(query, interval=10):
     """Periodically print streaming query status"""
     last_progress_time = time.time()
@@ -329,6 +389,7 @@ def main():
     # Create streaming queries
     try:
         main_query = create_streaming_query(spark)
+        window_query = create_windowed_aggregation_query(spark)
     except Exception as e:
         print(f"\n[Error] Failed to start streaming query: {e}")
         spark.stop()
@@ -362,6 +423,10 @@ def main():
     finally:
         if main_query:
             main_query.stop()
+            if 'window_query' in locals() and window_query:
+                window_query.stop()
+                print("[Main] ✓ Windowed aggregation query stopped")
+            print("[Main] ✓ Streaming query stopped")
             print("[Main] ✓ Streaming query stopped")
         
         if spark:

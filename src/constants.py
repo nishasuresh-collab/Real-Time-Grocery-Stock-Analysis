@@ -14,4 +14,9 @@ FEEDS = {
     "feed_3": "inSitu/25/video",
     "feed_4": "inSitu/90/video",
     "feed_5": "inSitu/120/video",
+    # "feed_6": "inSitu/56/video",
+    # "feed_7": "inSitu/34/video",
+    # "feed_8": "inSitu/89/video",
+    # "feed_9": "inSitu/55/video",
+    # "feed_10": "inSitu/72/video",
 }
