@@ -1,0 +1,64 @@
+25/12/02 21:10:16 WARN Utils: Your hostname, b0410 resolves to a loopback address: 127.0.1.1; using 10.255.255.254 instead (on interface lo)
+25/12/02 21:10:16 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+[Spark] Input dir      = /root/Real-Time-Grocery-Stock-Analysis/experiments/rate_0.2_cores_1_trig_2seconds_20251202_211012/json_stream
+[Spark] Checkpoint dir = /root/Real-Time-Grocery-Stock-Analysis/experiments/rate_0.2_cores_1_trig_2seconds_20251202_211012/spark_checkpoint
+[Spark] Metrics log    = /root/Real-Time-Grocery-Stock-Analysis/experiments/rate_0.2_cores_1_trig_2seconds_20251202_211012/batch_metrics.log
+[Spark] Trigger        = 2 seconds
+[Spark] Duration (s)   = 45
+25/12/02 21:10:17 INFO SparkContext: Running Spark version 3.5.1
+25/12/02 21:10:17 INFO SparkContext: OS info Linux, 6.6.87.2-microsoft-standard-WSL2, amd64
+25/12/02 21:10:17 INFO SparkContext: Java version 11.0.29
+25/12/02 21:10:17 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/02 21:10:17 INFO ResourceUtils: ==============================================================
+25/12/02 21:10:17 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/12/02 21:10:17 INFO ResourceUtils: ==============================================================
+25/12/02 21:10:17 INFO SparkContext: Submitted application: GroZiStreamProcessor
+25/12/02 21:10:17 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/12/02 21:10:17 INFO ResourceProfile: Limiting resource is cpu
+25/12/02 21:10:17 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/12/02 21:10:17 INFO SecurityManager: Changing view acls to: root
+25/12/02 21:10:17 INFO SecurityManager: Changing modify acls to: root
+25/12/02 21:10:17 INFO SecurityManager: Changing view acls groups to: 
+25/12/02 21:10:17 INFO SecurityManager: Changing modify acls groups to: 
+25/12/02 21:10:17 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+25/12/02 21:10:18 INFO Utils: Successfully started service 'sparkDriver' on port 45145.
+25/12/02 21:10:18 INFO SparkEnv: Registering MapOutputTracker
+25/12/02 21:10:18 INFO SparkEnv: Registering BlockManagerMaster
+25/12/02 21:10:18 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/12/02 21:10:18 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/12/02 21:10:18 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/12/02 21:10:18 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-38b01354-9571-4250-9686-f2ea512fc486
+25/12/02 21:10:18 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+25/12/02 21:10:18 INFO SparkEnv: Registering OutputCommitCoordinator
+25/12/02 21:10:18 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/12/02 21:10:18 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/12/02 21:10:18 INFO Executor: Starting executor ID driver on host 10.255.255.254
+25/12/02 21:10:18 INFO Executor: OS info Linux, 6.6.87.2-microsoft-standard-WSL2, amd64
+25/12/02 21:10:18 INFO Executor: Java version 11.0.29
+25/12/02 21:10:18 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/12/02 21:10:18 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@2e487de8 for default.
+25/12/02 21:10:18 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 43529.
+25/12/02 21:10:18 INFO NettyBlockTransferService: Server created on 10.255.255.254:43529
+25/12/02 21:10:18 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/12/02 21:10:18 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 10.255.255.254, 43529, None)
+25/12/02 21:10:18 INFO BlockManagerMasterEndpoint: Registering block manager 10.255.255.254:43529 with 434.4 MiB RAM, BlockManagerId(driver, 10.255.255.254, 43529, None)
+25/12/02 21:10:18 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 10.255.255.254, 43529, None)
+25/12/02 21:10:18 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 10.255.255.254, 43529, None)
+25/12/02 21:10:20 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+[Spark] Streaming query started.
+[Spark] Batch 0 | rows=272 | unique=1 | avg_conf=None | latency_ms=None | proc_ms=4301.96
+25/12/02 21:10:26 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 2000 milliseconds, but spent 5940 milliseconds
+[Spark] Batch 1 | rows=448 | unique=1 | avg_conf=None | latency_ms=None | proc_ms=1634.61
+25/12/02 21:10:28 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 2000 milliseconds, but spent 2109 milliseconds
+[Spark] Batch 2 | rows=128 | unique=1 | avg_conf=None | latency_ms=None | proc_ms=1237.44
+[Spark] Batch 3 | rows=56 | unique=1 | avg_conf=None | latency_ms=None | proc_ms=1210.25
+[Spark] Batch 4 | rows=168 | unique=1 | avg_conf=None | latency_ms=None | proc_ms=1167.95
+[Spark] Batch 5 | rows=144 | unique=1 | avg_conf=None | latency_ms=None | proc_ms=1206.58
+[Spark] Batch 6 | rows=168 | unique=1 | avg_conf=None | latency_ms=None | proc_ms=1299.64
+[Spark] Batch 7 | rows=64 | unique=1 | avg_conf=None | latency_ms=None | proc_ms=1022.16
+[Spark] Batch 8 | rows=144 | unique=1 | avg_conf=None | latency_ms=None | proc_ms=1090.98
+[Spark] Batch 9 | rows=152 | unique=1 | avg_conf=None | latency_ms=None | proc_ms=1107.20
+[Spark] Batch 10 | rows=128 | unique=1 | avg_conf=None | latency_ms=None | proc_ms=984.59
+[Spark] Batch 11 | rows=48 | unique=1 | avg_conf=None | latency_ms=None | proc_ms=985.55
+[Spark] Batch 12 | rows=88 | unique=1 | avg_conf=None | latency_ms=None | proc_ms=1008.67
+[Spark] Batch 13 | rows=24 | unique=1 | avg_conf=None | latency_ms=None | proc_ms=1059.39

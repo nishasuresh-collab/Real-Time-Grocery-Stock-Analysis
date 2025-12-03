@@ -1,0 +1,10 @@
+v1
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_1.0_cores_1_trig_2seconds_20251202_210638/json_stream/feed_2_2025-12-02T21-07-10.json","timestamp":1764727630871,"batchId":10}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_1.0_cores_1_trig_2seconds_20251202_210638/json_stream/feed_8_2025-12-02T21-07-10.json","timestamp":1764727630883,"batchId":10}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_1.0_cores_1_trig_2seconds_20251202_210638/json_stream/feed_9_2025-12-02T21-07-09.json","timestamp":1764727630899,"batchId":10}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_1.0_cores_1_trig_2seconds_20251202_210638/json_stream/feed_5_2025-12-02T21-07-10.json","timestamp":1764727630911,"batchId":10}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_1.0_cores_1_trig_2seconds_20251202_210638/json_stream/feed_9_2025-12-02T21-07-10.json","timestamp":1764727630931,"batchId":10}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_1.0_cores_1_trig_2seconds_20251202_210638/json_stream/feed_3_2025-12-02T21-07-10.json","timestamp":1764727630943,"batchId":10}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_1.0_cores_1_trig_2seconds_20251202_210638/json_stream/feed_6_2025-12-02T21-07-10.json","timestamp":1764727630959,"batchId":10}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_1.0_cores_1_trig_2seconds_20251202_210638/json_stream/feed_10_2025-12-02T21-07-10.json","timestamp":1764727630971,"batchId":10}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_1.0_cores_1_trig_2seconds_20251202_210638/json_stream/feed_1_2025-12-02T21-07-10.json","timestamp":1764727630987,"batchId":10}

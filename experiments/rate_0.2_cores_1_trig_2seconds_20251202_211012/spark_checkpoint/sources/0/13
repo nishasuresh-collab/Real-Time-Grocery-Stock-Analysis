@@ -1,0 +1,4 @@
+v1
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_0.2_cores_1_trig_2seconds_20251202_211012/json_stream/feed_1_2025-12-02T21-10-47.json","timestamp":1764727848219,"batchId":13}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_0.2_cores_1_trig_2seconds_20251202_211012/json_stream/feed_5_2025-12-02T21-10-47.json","timestamp":1764727848235,"batchId":13}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_0.2_cores_1_trig_2seconds_20251202_211012/json_stream/feed_1_2025-12-02T21-10-48.json","timestamp":1764727849279,"batchId":13}
