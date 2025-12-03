@@ -47,3 +47,10 @@ Files in `src` with realtime pipeline:
 TODO:
 
 Current `realtime_grozi_pipeline.py` stores json outputs in `/stream_output_json`. The code should be changed to continue with real-time json streaming in PySpark.
+
+
+Scalability Testing:
+Run this coomand from root folder
+```powershell
+python run_scalability_experiments.py
+```

@@ -21,7 +21,7 @@ CHECKPOINT_DIR = "spark_checkpoint"
 METRICS_LOG_DIR = "spark_metrics_logs"
 WINDOW_DURATION = "10 seconds"
 SLIDE_DURATION = "5 seconds"
-TRIGGER_INTERVAL = "2 seconds"
+TRIGGER_INTERVAL = "10 seconds"
 
 # Define schema for incoming JSON detection records
 detection_schema = StructType([

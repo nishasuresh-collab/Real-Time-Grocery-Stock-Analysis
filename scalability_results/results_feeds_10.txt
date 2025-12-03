@@ -1,0 +1,8 @@
+
+==== METRICS SUMMARY ====
+Mean Detections  : 8.889
+Mean Latency (ms): 30188.889
+Mean Confidence  : 0.999
+Mean Unique Prod : 8.111
+==========================
+

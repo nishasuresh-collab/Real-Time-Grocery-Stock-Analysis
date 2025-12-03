@@ -20,11 +20,10 @@ JSON_OUT_DIR = "stream_output_json"
 SLEEP_INTERVAL = 1.0
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--num_feeds", type=int, default=1,
-                    help="Number of camera feeds to simulate")
+parser.add_argument("--num_feeds", type=int, default=1, help="Number of camera feeds to simulate")
 args = parser.parse_args()
 
-# Validate & build FEEDS
+# Validate and build FEEDS
 NUM_FEEDS = min(max(args.num_feeds, 1), len(ALL_FEEDS))
 FEEDS = {
     f"feed_{i+1}": ALL_FEEDS[i]
@@ -36,22 +35,6 @@ print(f"[Config] Using {NUM_FEEDS} feeds: {FEEDS}")
 print(f"[Config] Using {NUM_FEEDS} feeds:")
 for k, v in FEEDS.items():
     print(f"  {k} -> {v}")
-
-# ====================================
-# CLEAN SPARK CHECKPOINT & METRIC LOGS
-# ====================================
-def safe_delete(path):
-    if os.path.exists(path):
-        shutil.rmtree(path)
-        print(f"[Cleanup] Removed: {path}")
-
-# Remove logs created by PySpark
-safe_delete("spark_checkpoint")
-safe_delete("spark_metrics_logs")
-
-# Remove logs if Spark writes inside src/
-safe_delete("src/spark_checkpoint")
-safe_delete("src/spark_metrics_logs")
 
 
 def load_upc_mapping(path):

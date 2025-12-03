@@ -5,31 +5,20 @@ import csv
 import shutil
 import matplotlib.pyplot as plt
 
-
-# ==========================
-# CONFIG
-# ==========================
-
-FEED_COUNTS = [1, 3, 5]          # scalability experiments
-RUN_DURATION = 120               # seconds to run each experiment
+FEED_COUNTS = [1, 3, 5, 10] # to test scalability by sinding in multiple feeds
+RUN_DURATION = 120 # seconds allocated to run each scalability test
 RESULT_DIR = "scalability_results"
-LOG_FILE = "spark_metrics_logs/batch_metrics.log"
+LOG_FILE = "src/spark_metrics_logs/batch_metrics.log"
 
-# Ensure result folder exists
 os.makedirs(RESULT_DIR, exist_ok=True)
 
-
-# ==========================
-# UTIL FUNCTIONS
-# ==========================
-
 def clean_spark_dirs():
-    """Remove Spark logs + checkpoints before each run."""
+    # Remove Spark logs and checkpoints before each run
+    print("Removing Spark logs and checkpoints...")
     paths = [
-        "spark_checkpoint",
-        "spark_metrics_logs",
         "src/spark_checkpoint",
-        "src/spark_metrics_logs"
+        "src/spark_metrics_logs",
+        "stream_output_json"
     ]
     for path in paths:
         if os.path.exists(path):
@@ -38,11 +27,11 @@ def clean_spark_dirs():
 
 
 def run_yolo_pipeline(num_feeds):
-    """Start YOLO + feed simulator pipeline (non-blocking)."""
+    # Start YOLO + feed simulator pipeline
     print(f"[Start] YOLO pipeline with {num_feeds} feeds")
     return subprocess.Popen(
         ["python", "-m", "src.realtime_grozi_pipeline", "--num_feeds", str(num_feeds)],
-        stdout=None,   # ← IMPORTANT: prevents freezing
+        stdout=None,
         stderr=None
     )
 
@@ -50,7 +39,8 @@ def run_yolo_pipeline(num_feeds):
 def run_spark_processor():
     print("[Start] PySpark stream processor")
     return subprocess.Popen(
-        ["python", "src/pyspark_stream_processor.py"],
+        ["python", "pyspark_stream_processor.py"],
+        cwd="src",
         stdout=None,
         stderr=None
     )
@@ -58,7 +48,7 @@ def run_spark_processor():
 
 
 def kill_process(proc, name):
-    """Gracefully terminate subprocess."""
+    # To terminate subprocesses
     if proc and proc.poll() is None:
         print(f"[Kill] Terminating {name}...")
         proc.terminate()
@@ -70,7 +60,7 @@ def kill_process(proc, name):
 
 
 def extract_metrics():
-    """Run metrics extractor script and return printed output."""
+    # Run metrics extractor script to captire the metric for each feed run
     result = subprocess.run(
         ["python", "extract_metrics.py", "--log", LOG_FILE],
         stdout=subprocess.PIPE,
@@ -91,10 +81,6 @@ def parse_metric_value(text, key):
     return None
 
 
-# ==========================
-# MAIN EXPERIMENT LOOP
-# ==========================
-
 if __name__ == "__main__":
     results = []
 
@@ -103,21 +89,26 @@ if __name__ == "__main__":
         print(f"[Experiment] Running with NUM_FEEDS = {num}")
         print("=" * 60)
 
-        # Clean logs/checkpoints
         clean_spark_dirs()
 
-        # Run YOLO + Spark in true parallel (OS processes)
-        yolo_proc = run_yolo_pipeline(num)
+        # Run YOLO + Spark in parallel
         spark_proc = run_spark_processor()
+        time.sleep(10)
+        yolo_proc = run_yolo_pipeline(num)
 
         print(f"[Wait] Running for {RUN_DURATION} seconds...")
+        
+        print("[Time Before Sleep]", time.strftime("%Y-%m-%d %H:%M:%S"))
         time.sleep(RUN_DURATION)
+        print("[Time After Sleep ]", time.strftime("%Y-%m-%d %H:%M:%S"))
 
-        # Terminate both pipelines
+
+        # Terminating both pipelines
         kill_process(yolo_proc, "YOLO pipeline")
         kill_process(spark_proc, "Spark processor")
 
         # Extract metrics
+        print("Extracting metrics...")
         metrics_text = extract_metrics()
 
         # Parse metrics
@@ -132,11 +123,9 @@ if __name__ == "__main__":
         with open(f"{RESULT_DIR}/results_feeds_{num}.txt", "w") as f:
             f.write(metrics_text)
 
+        time.sleep(10)
 
-    # =====================================
-    # SAVE COMBINED RESULTS TO CSV
-    # =====================================
-
+    # Saving all feed rmetric extracted to csv for plotting
     csv_path = f"{RESULT_DIR}/scalability_summary.csv"
     with open(csv_path, "w", newline="") as csvfile:
         writer = csv.writer(csvfile)
@@ -149,13 +138,9 @@ if __name__ == "__main__":
         ])
         writer.writerows(results)
 
-    print(f"[Saved] Combined CSV → {csv_path}")
+    print(f"[Saved] Combined CSV: {csv_path}")
 
-
-    # =====================================
-    # AUTO-GENERATED GRAPHS
-    # =====================================
-
+    # Plotting the extracted metrics
     feeds = [r[0] for r in results]
     det_values = [r[1] for r in results]
     lat_values = [r[2] for r in results]
@@ -178,4 +163,4 @@ if __name__ == "__main__":
     plt.grid(True)
     plt.savefig(f"{RESULT_DIR}/detections_vs_feeds.png", dpi=150)
 
-    print(f"[Saved] Plots saved to → {RESULT_DIR}/")
+    print(f"[Saved] Plots saved to {RESULT_DIR}/")
