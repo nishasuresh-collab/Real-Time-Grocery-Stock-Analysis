@@ -1,0 +1,13 @@
+v1
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_0.5_cores_8_trig_2seconds_20251202_210919/json_stream/feed_4_2025-12-02T21-09-31.json","timestamp":1764727771903,"batchId":2}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_0.5_cores_8_trig_2seconds_20251202_210919/json_stream/feed_8_2025-12-02T21-09-31.json","timestamp":1764727771911,"batchId":2}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_0.5_cores_8_trig_2seconds_20251202_210919/json_stream/feed_8_2025-12-02T21-09-30.json","timestamp":1764727771923,"batchId":2}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_0.5_cores_8_trig_2seconds_20251202_210919/json_stream/feed_3_2025-12-02T21-09-32.json","timestamp":1764727772959,"batchId":2}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_0.5_cores_8_trig_2seconds_20251202_210919/json_stream/feed_2_2025-12-02T21-09-32.json","timestamp":1764727772975,"batchId":2}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_0.5_cores_8_trig_2seconds_20251202_210919/json_stream/feed_5_2025-12-02T21-09-32.json","timestamp":1764727773007,"batchId":2}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_0.5_cores_8_trig_2seconds_20251202_210919/json_stream/feed_9_2025-12-02T21-09-31.json","timestamp":1764727773019,"batchId":2}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_0.5_cores_8_trig_2seconds_20251202_210919/json_stream/feed_4_2025-12-02T21-09-32.json","timestamp":1764727773035,"batchId":2}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_0.5_cores_8_trig_2seconds_20251202_210919/json_stream/feed_9_2025-12-02T21-09-32.json","timestamp":1764727773047,"batchId":2}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_0.5_cores_8_trig_2seconds_20251202_210919/json_stream/feed_6_2025-12-02T21-09-32.json","timestamp":1764727773063,"batchId":2}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_0.5_cores_8_trig_2seconds_20251202_210919/json_stream/feed_8_2025-12-02T21-09-32.json","timestamp":1764727773075,"batchId":2}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_0.5_cores_8_trig_2seconds_20251202_210919/json_stream/feed_7_2025-12-02T21-09-32.json","timestamp":1764727773091,"batchId":2}

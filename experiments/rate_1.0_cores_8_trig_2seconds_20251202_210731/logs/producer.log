@@ -1,0 +1,525 @@
+cleaned 252 files from stream_input
+removed old log file
+created new log:  feed_log.csv
+Loaded 120 products
+Using CUDA
+[Watcher] Watching folder: stream_input
+feed_4  starting stream with  14  frames
+feed_4 | video2.png : feed_4_2025-12-02T21-07-35.png
+feed_4 | video9.png : feed_4_2025-12-02T21-07-36.png
+feed_4 | video11.png : feed_4_2025-12-02T21-07-36.png
+feed_4 | video12.png : feed_4_2025-12-02T21-07-37.png
+feed_4 | video3.png : feed_4_2025-12-02T21-07-37.png
+feed_4 | video5.png : feed_4_2025-12-02T21-07-38.png
+feed_4 | video1.png : feed_4_2025-12-02T21-07-39.png
+feed_4 | video14.png : feed_4_2025-12-02T21-07-39.png
+feed_4 | video6.png : feed_4_2025-12-02T21-07-40.png
+feed_4 | video7.png : feed_4_2025-12-02T21-07-40.png
+feed_4 | video8.png : feed_4_2025-12-02T21-07-41.png
+feed_4 | video13.png : feed_4_2025-12-02T21-07-41.png
+feed_4 | video10.png : feed_4_2025-12-02T21-07-42.png
+feed_4 | video4.png : feed_4_2025-12-02T21-07-42.png
+feed_4  finished sending 14 frames
+[Infer] Class 095 | GM HNY NUT CHEERIOS CEREAL CUP | Confidence: 1.000
+[Infer] Class 056 | Propel Fitness Water | Confidence: 1.000
+[Infer] Class 012 | Snickers | Confidence: 1.000
+[Infer] Class 041 | FORMULA 409 | Confidence: 1.000
+[Infer] Class 003 | Gardetto's Original Recipe | Confidence: 1.000
+[Infer] Class 041 | FORMULA 409 | Confidence: 0.999
+[Infer] Class 027 | Morton Salt, Iodized | Confidence: 1.000
+[Infer] Class 118 | Ben & Jerry's Ice Cream World's Best Vanilla | Confidence: 1.000
+[Infer] Class 107 | Mini Chips Ahoy! | Confidence: 1.000
+[Infer] Class 078 | BEEF JERKY | Confidence: 1.000
+[Infer] Class 063 | NYQUIL LQCAPS PSE FREE 12 CT | Confidence: 0.996
+[Infer] Class 107 | Mini Chips Ahoy! | Confidence: 1.000
+[Infer] Class 041 | FORMULA 409 | Confidence: 1.000
+[Infer] Class 078 | BEEF JERKY | Confidence: 1.000
+[Infer] Class 095 | GM HNY NUT CHEERIOS CEREAL CUP | Confidence: 1.000
+[Infer] Class 095 | GM HNY NUT CHEERIOS CEREAL CUP | Confidence: 0.999
+[Infer] Class 118 | Ben & Jerry's Ice Cream World's Best Vanilla | Confidence: 1.000
+[Infer] Class 107 | Mini Chips Ahoy! | Confidence: 1.000
+[Infer] Class 027 | Morton Salt, Iodized | Confidence: 1.000
+[Infer] Class 095 | GM HNY NUT CHEERIOS CEREAL CUP | Confidence: 1.000
+[Infer] Class 078 | BEEF JERKY | Confidence: 1.000
+[Infer] Class 056 | Propel Fitness Water | Confidence: 1.000
+[Infer] Class 056 | Propel Fitness Water | Confidence: 1.000
+[Infer] Class 118 | Ben & Jerry's Ice Cream World's Best Vanilla | Confidence: 1.000
+[Infer] Class 056 | Propel Fitness Water | Confidence: 1.000
+[Infer] Class 063 | NYQUIL LQCAPS PSE FREE 12 CT | Confidence: 1.000
+[Infer] Class 003 | Gardetto's Original Recipe | Confidence: 0.999
+[Infer] Class 003 | Gardetto's Original Recipe | Confidence: 1.000
+[Infer] Class 041 | FORMULA 409 | Confidence: 1.000
+[Infer] Class 027 | Morton Salt, Iodized | Confidence: 0.999
+[Infer] Class 012 | Snickers | Confidence: 1.000
+[Infer] Class 012 | Snickers | Confidence: 1.000
+[Infer] Class 027 | Morton Salt, Iodized | Confidence: 1.000
+[Infer] Class 056 | Propel Fitness Water | Confidence: 1.000
+[Infer] Class 041 | FORMULA 409 | Confidence: 1.000
+[Infer] Class 078 | BEEF JERKY | Confidence: 1.000
+[Infer] Class 003 | Gardetto's Original Recipe | Confidence: 1.000
+[Infer] Class 063 | NYQUIL LQCAPS PSE FREE 12 CT | Confidence: 1.000
+[Infer] Class 095 | GM HNY NUT CHEERIOS CEREAL CUP | Confidence: 1.000
+[Infer] Class 003 | Gardetto's Original Recipe | Confidence: 1.000
+[Infer] Class 078 | BEEF JERKY | Confidence: 1.000
+[Infer] Class 012 | Snickers | Confidence: 0.995
+[Infer] Class 107 | Mini Chips Ahoy! | Confidence: 1.000
+[Infer] Class 107 | Mini Chips Ahoy! | Confidence: 1.000
+[Infer] Class 118 | Ben & Jerry's Ice Cream World's Best Vanilla | Confidence: 1.000
+[Infer] Class 063 | NYQUIL LQCAPS PSE FREE 12 CT | Confidence: 1.000
+[Infer] Class 027 | Morton Salt, Iodized | Confidence: 1.000
+[Infer] Class 012 | Snickers | Confidence: 1.000
+[Infer] Class 078 | BEEF JERKY | Confidence: 1.000
+[Infer] Class 095 | GM HNY NUT CHEERIOS CEREAL CUP | Confidence: 1.000
+[Infer] Class 003 | Gardetto's Original Recipe | Confidence: 0.999
+[Infer] Class 107 | Mini Chips Ahoy! | Confidence: 1.000
+[Infer] Class 063 | NYQUIL LQCAPS PSE FREE 12 CT | Confidence: 1.000
+[Infer] Class 056 | Propel Fitness Water | Confidence: 1.000
+[Infer] Class 041 | FORMULA 409 | Confidence: 1.000
+[Infer] Class 118 | Ben & Jerry's Ice Cream World's Best Vanilla | Confidence: 1.000
+[Infer] Class 027 | Morton Salt, Iodized | Confidence: 1.000
+[Infer] Class 107 | Mini Chips Ahoy! | Confidence: 1.000
+[Infer] Class 012 | Snickers | Confidence: 1.000
+[Infer] Class 063 | NYQUIL LQCAPS PSE FREE 12 CT | Confidence: 1.000
+[Infer] Class 041 | FORMULA 409 | Confidence: 1.000
+[Infer] Class 003 | Gardetto's Original Recipe | Confidence: 0.999
+[Infer] Class 095 | GM HNY NUT CHEERIOS CEREAL CUP | Confidence: 1.000
+[Infer] Class 056 | Propel Fitness Water | Confidence: 1.000
+[Infer] Class 012 | Snickers | Confidence: 1.000
+[Infer] Class 078 | BEEF JERKY | Confidence: 1.000
+[Infer] Class 118 | Ben & Jerry's Ice Cream World's Best Vanilla | Confidence: 1.000
+[Infer] Class 107 | Mini Chips Ahoy! | Confidence: 1.000
+[Infer] Class 118 | Ben & Jerry's Ice Cream World's Best Vanilla | Confidence: 1.000
+[Infer] Class 041 | FORMULA 409 | Confidence: 1.000
+[Infer] Class 056 | Propel Fitness Water | Confidence: 1.000
+[Infer] Class 027 | Morton Salt, Iodized | Confidence: 1.000
+[Infer] Class 095 | GM HNY NUT CHEERIOS CEREAL CUP | Confidence: 1.000
+[Infer] Class 012 | Snickers | Confidence: 0.991
+[Infer] Class 078 | BEEF JERKY | Confidence: 1.000
+[Infer] Class 063 | NYQUIL LQCAPS PSE FREE 12 CT | Confidence: 1.000
+[Infer] Class 003 | Gardetto's Original Recipe | Confidence: 1.000
+[Infer] Class 056 | Propel Fitness Water | Confidence: 0.999
+[Infer] Class 095 | GM HNY NUT CHEERIOS CEREAL CUP | Confidence: 1.000
+[Infer] Class 107 | Mini Chips Ahoy! | Confidence: 1.000
+[Infer] Class 027 | Morton Salt, Iodized | Confidence: 1.000
+[Infer] Class 063 | NYQUIL LQCAPS PSE FREE 12 CT | Confidence: 0.999
+[Infer] Class 078 | BEEF JERKY | Confidence: 1.000
+[Infer] Class 012 | Snickers | Confidence: 1.000
+[Infer] Class 027 | Morton Salt, Iodized | Confidence: 1.000
+[Infer] Class 118 | Ben & Jerry's Ice Cream World's Best Vanilla | Confidence: 1.000
+[Infer] Class 107 | Mini Chips Ahoy! | Confidence: 1.000
+[Infer] Class 003 | Gardetto's Original Recipe | Confidence: 1.000
+[Infer] Class 056 | Propel Fitness Water | Confidence: 0.998
+[Infer] Class 012 | Snickers | Confidence: 0.996
+[Infer] Class 027 | Morton Salt, Iodized | Confidence: 1.000
+[Infer] Class 107 | Mini Chips Ahoy! | Confidence: 1.000
+[Infer] Class 095 | GM HNY NUT CHEERIOS CEREAL CUP | Confidence: 1.000
+[Infer] Class 078 | BEEF JERKY | Confidence: 1.000
+[Infer] Class 012 | Snickers | Confidence: 1.000
+[Infer] Class 118 | Ben & Jerry's Ice Cream World's Best Vanilla | Confidence: 0.999
+[Infer] Class 063 | NYQUIL LQCAPS PSE FREE 12 CT | Confidence: 1.000
+[Infer] Class 056 | Propel Fitness Water | Confidence: 1.000
+[Infer] Class 118 | Ben & Jerry's Ice Cream World's Best Vanilla | Confidence: 1.000
+[Infer] Class 012 | Snickers | Confidence: 1.000
+[Infer] Class 063 | NYQUIL LQCAPS PSE FREE 12 CT | Confidence: 0.999
+[Infer] Class 095 | GM HNY NUT CHEERIOS CEREAL CUP | Confidence: 1.000
+[Infer] Class 003 | Gardetto's Original Recipe | Confidence: 1.000
+[Infer] Class 056 | Propel Fitness Water | Confidence: 1.000
+[Infer] Class 003 | Gardetto's Original Recipe | Confidence: 1.000
+[Infer] Class 027 | Morton Salt, Iodized | Confidence: 1.000
+[Infer] Class 063 | NYQUIL LQCAPS PSE FREE 12 CT | Confidence: 0.997
+[Infer] Class 078 | BEEF JERKY | Confidence: 0.998
+[Infer] Class 107 | Mini Chips Ahoy! | Confidence: 1.000
+[Infer] Class 056 | Propel Fitness Water | Confidence: 1.000
+[Infer] Class 118 | Ben & Jerry's Ice Cream World's Best Vanilla | Confidence: 1.000
+[Infer] Class 012 | Snickers | Confidence: 0.999
+[Infer] Class 027 | Morton Salt, Iodized | Confidence: 1.000
+[Infer] Class 063 | NYQUIL LQCAPS PSE FREE 12 CT | Confidence: 0.998
+[Infer] Class 107 | Mini Chips Ahoy! | Confidence: 1.000
+[Infer] Class 095 | GM HNY NUT CHEERIOS CEREAL CUP | Confidence: 1.000
+[Infer] Class 003 | Gardetto's Original Recipe | Confidence: 1.000
+[Infer] Class 078 | BEEF JERKY | Confidence: 1.000
+[Infer] Class 003 | Gardetto's Original Recipe | Confidence: 1.000
+[Infer] Class 012 | Snickers | Confidence: 1.000
+[Infer] Class 118 | Ben & Jerry's Ice Cream World's Best Vanilla | Confidence: 1.000
+[Infer] Class 107 | Mini Chips Ahoy! | Confidence: 1.000
+[Infer] Class 095 | GM HNY NUT CHEERIOS CEREAL CUP | Confidence: 0.999
+[Infer] Class 118 | Ben & Jerry's Ice Cream World's Best Vanilla | Confidence: 1.000
+[Infer] Class 063 | NYQUIL LQCAPS PSE FREE 12 CT | Confidence: 0.999
+[Infer] Class 056 | Propel Fitness Water | Confidence: 1.000
+[Infer] Class 078 | BEEF JERKY | Confidence: 1.000
+[Infer] Class 027 | Morton Salt, Iodized | Confidence: 1.000
+[Infer] Class 078 | BEEF JERKY | Confidence: 1.000
+[Infer] Class 095 | GM HNY NUT CHEERIOS CEREAL CUP | Confidence: 1.000
+feed_3  starting stream with  35  frames
+feed_3 | video34.png : feed_3_2025-12-02T21-07-35.png
+feed_3 | video24.png : feed_3_2025-12-02T21-07-35.png
+feed_3 | video28.png : feed_3_2025-12-02T21-07-36.png
+feed_3 | video35.png : feed_3_2025-12-02T21-07-38.png
+feed_3 | video10.png : feed_3_2025-12-02T21-07-38.png
+feed_3 | video12.png : feed_3_2025-12-02T21-07-39.png
+feed_3 | video9.png : feed_3_2025-12-02T21-07-39.png
+feed_3 | video20.png : feed_3_2025-12-02T21-07-40.png
+feed_3 | video14.png : feed_3_2025-12-02T21-07-41.png
+feed_3 | video22.png : feed_3_2025-12-02T21-07-42.png
+feed_3 | video8.png : feed_3_2025-12-02T21-07-43.png
+feed_3 | video18.png : feed_3_2025-12-02T21-07-43.png
+feed_3 | video21.png : feed_3_2025-12-02T21-07-44.png
+feed_3 | video27.png : feed_3_2025-12-02T21-07-45.png
+feed_3 | video16.png : feed_3_2025-12-02T21-07-46.png
+feed_3 | video4.png : feed_3_2025-12-02T21-07-46.png
+feed_3 | video15.png : feed_3_2025-12-02T21-07-47.png
+feed_3 | video2.png : feed_3_2025-12-02T21-07-47.png
+feed_3 | video6.png : feed_3_2025-12-02T21-07-48.png
+feed_3 | video23.png : feed_3_2025-12-02T21-07-48.png
+feed_3 | video13.png : feed_3_2025-12-02T21-07-49.png
+feed_3 | video19.png : feed_3_2025-12-02T21-07-49.png
+feed_3 | video25.png : feed_3_2025-12-02T21-07-50.png
+feed_3 | video31.png : feed_3_2025-12-02T21-07-50.png
+feed_3 | video29.png : feed_3_2025-12-02T21-07-51.png
+feed_3 | video33.png : feed_3_2025-12-02T21-07-51.png
+feed_3 | video11.png : feed_3_2025-12-02T21-07-52.png
+feed_3 | video5.png : feed_3_2025-12-02T21-07-52.png
+feed_3 | video30.png : feed_3_2025-12-02T21-07-53.png
+feed_3 | video26.png : feed_3_2025-12-02T21-07-54.png
+feed_3 | video1.png : feed_3_2025-12-02T21-07-54.png
+feed_3 | video3.png : feed_3_2025-12-02T21-07-56.png
+feed_3 | video7.png : feed_3_2025-12-02T21-07-56.png
+feed_3 | video32.png : feed_3_2025-12-02T21-07-57.png
+feed_3 | video17.png : feed_3_2025-12-02T21-07-58.png
+feed_3  finished sending 35 frames
+feed_5  starting stream with  76  frames
+feed_5 | video56.png : feed_5_2025-12-02T21-07-35.png
+feed_5 | video21.png : feed_5_2025-12-02T21-07-36.png
+feed_5 | video74.png : feed_5_2025-12-02T21-07-37.png
+feed_5 | video69.png : feed_5_2025-12-02T21-07-37.png
+feed_5 | video68.png : feed_5_2025-12-02T21-07-38.png
+feed_5 | video20.png : feed_5_2025-12-02T21-07-38.png
+feed_5 | video71.png : feed_5_2025-12-02T21-07-39.png
+feed_5 | video40.png : feed_5_2025-12-02T21-07-39.png
+feed_5 | video1.png : feed_5_2025-12-02T21-07-40.png
+feed_5 | video66.png : feed_5_2025-12-02T21-07-41.png
+feed_5 | video3.png : feed_5_2025-12-02T21-07-41.png
+feed_5 | video67.png : feed_5_2025-12-02T21-07-42.png
+feed_5 | video52.png : feed_5_2025-12-02T21-07-43.png
+feed_5 | video9.png : feed_5_2025-12-02T21-07-43.png
+feed_5 | video72.png : feed_5_2025-12-02T21-07-44.png
+feed_5 | video63.png : feed_5_2025-12-02T21-07-45.png
+feed_5 | video47.png : feed_5_2025-12-02T21-07-46.png
+feed_5 | video19.png : feed_5_2025-12-02T21-07-46.png
+feed_5 | video25.png : feed_5_2025-12-02T21-07-47.png
+feed_5 | video75.png : feed_5_2025-12-02T21-07-47.png
+feed_5 | video5.png : feed_5_2025-12-02T21-07-48.png
+feed_5 | video44.png : feed_5_2025-12-02T21-07-49.png
+feed_5 | video22.png : feed_5_2025-12-02T21-07-50.png
+feed_5 | video41.png : feed_5_2025-12-02T21-07-50.png
+feed_5 | video53.png : feed_5_2025-12-02T21-07-51.png
+feed_5 | video70.png : feed_5_2025-12-02T21-07-51.png
+feed_5 | video59.png : feed_5_2025-12-02T21-07-52.png
+feed_5 | video33.png : feed_5_2025-12-02T21-07-52.png
+feed_5 | video61.png : feed_5_2025-12-02T21-07-53.png
+feed_5 | video32.png : feed_5_2025-12-02T21-07-53.png
+feed_5 | video73.png : feed_5_2025-12-02T21-07-54.png
+feed_5 | video7.png : feed_5_2025-12-02T21-07-54.png
+feed_5 | video12.png : feed_5_2025-12-02T21-07-55.png
+feed_5 | video11.png : feed_5_2025-12-02T21-07-56.png
+feed_5 | video65.png : feed_5_2025-12-02T21-07-56.png
+feed_5 | video62.png : feed_5_2025-12-02T21-07-57.png
+feed_5 | video64.png : feed_5_2025-12-02T21-07-58.png
+feed_5 | video76.png : feed_5_2025-12-02T21-07-58.png
+feed_5 | video23.png : feed_5_2025-12-02T21-07-59.png
+feed_5 | video34.png : feed_5_2025-12-02T21-08-00.png
+feed_5  finished sending 40 frames
+feed_2  starting stream with  120  frames
+feed_2 | video96.png : feed_2_2025-12-02T21-07-35.png
+feed_2 | video27.png : feed_2_2025-12-02T21-07-35.png
+feed_2 | video85.png : feed_2_2025-12-02T21-07-36.png
+feed_2 | video23.png : feed_2_2025-12-02T21-07-37.png
+feed_2 | video60.png : feed_2_2025-12-02T21-07-38.png
+feed_2 | video90.png : feed_2_2025-12-02T21-07-39.png
+feed_2 | video5.png : feed_2_2025-12-02T21-07-40.png
+feed_2 | video40.png : feed_2_2025-12-02T21-07-41.png
+feed_2 | video29.png : feed_2_2025-12-02T21-07-41.png
+feed_2 | video114.png : feed_2_2025-12-02T21-07-42.png
+feed_2 | video15.png : feed_2_2025-12-02T21-07-42.png
+feed_2 | video84.png : feed_2_2025-12-02T21-07-43.png
+feed_2 | video1.png : feed_2_2025-12-02T21-07-44.png
+feed_2 | video56.png : feed_2_2025-12-02T21-07-44.png
+feed_2 | video79.png : feed_2_2025-12-02T21-07-45.png
+feed_2 | video89.png : feed_2_2025-12-02T21-07-45.png
+feed_2 | video51.png : feed_2_2025-12-02T21-07-46.png
+feed_2 | video76.png : feed_2_2025-12-02T21-07-47.png
+feed_2 | video4.png : feed_2_2025-12-02T21-07-48.png
+feed_2 | video73.png : feed_2_2025-12-02T21-07-48.png
+feed_2 | video80.png : feed_2_2025-12-02T21-07-49.png
+feed_2 | video83.png : feed_2_2025-12-02T21-07-50.png
+feed_2 | video118.png : feed_2_2025-12-02T21-07-50.png
+feed_2 | video66.png : feed_2_2025-12-02T21-07-51.png
+feed_2 | video10.png : feed_2_2025-12-02T21-07-52.png
+feed_2 | video104.png : feed_2_2025-12-02T21-07-52.png
+feed_2 | video95.png : feed_2_2025-12-02T21-07-53.png
+feed_2 | video103.png : feed_2_2025-12-02T21-07-54.png
+feed_2 | video25.png : feed_2_2025-12-02T21-07-55.png
+feed_2 | video21.png : feed_2_2025-12-02T21-07-55.png
+feed_2 | video55.png : feed_2_2025-12-02T21-07-56.png
+feed_2 | video97.png : feed_2_2025-12-02T21-07-56.png
+feed_2 | video78.png : feed_2_2025-12-02T21-07-57.png
+feed_2 | video12.png : feed_2_2025-12-02T21-07-58.png
+feed_2 | video91.png : feed_2_2025-12-02T21-07-58.png
+feed_2 | video44.png : feed_2_2025-12-02T21-07-59.png
+feed_2 | video45.png : feed_2_2025-12-02T21-07-59.png
+feed_2 | video70.png : feed_2_2025-12-02T21-08-00.png
+feed_2 | video116.png : feed_2_2025-12-02T21-08-01.png
+feed_2 | video26.png : feed_2_2025-12-02T21-08-01.png
+feed_2  finished sending 40 frames
+feed_9  starting stream with  74  frames
+feed_9 | video15.png : feed_9_2025-12-02T21-07-35.png
+feed_9 | video37.png : feed_9_2025-12-02T21-07-36.png
+feed_9 | video32.png : feed_9_2025-12-02T21-07-37.png
+feed_9 | video31.png : feed_9_2025-12-02T21-07-37.png
+feed_9 | video13.png : feed_9_2025-12-02T21-07-38.png
+feed_9 | video21.png : feed_9_2025-12-02T21-07-39.png
+feed_9 | video70.png : feed_9_2025-12-02T21-07-39.png
+feed_9 | video68.png : feed_9_2025-12-02T21-07-40.png
+feed_9 | video1.png : feed_9_2025-12-02T21-07-40.png
+feed_9 | video66.png : feed_9_2025-12-02T21-07-41.png
+feed_9 | video14.png : feed_9_2025-12-02T21-07-42.png
+feed_9 | video62.png : feed_9_2025-12-02T21-07-43.png
+feed_9 | video38.png : feed_9_2025-12-02T21-07-43.png
+feed_9 | video23.png : feed_9_2025-12-02T21-07-44.png
+feed_9 | video3.png : feed_9_2025-12-02T21-07-44.png
+feed_9 | video58.png : feed_9_2025-12-02T21-07-45.png
+feed_9 | video42.png : feed_9_2025-12-02T21-07-45.png
+feed_9 | video69.png : feed_9_2025-12-02T21-07-46.png
+feed_9 | video18.png : feed_9_2025-12-02T21-07-46.png
+feed_9 | video61.png : feed_9_2025-12-02T21-07-47.png
+feed_9 | video46.png : feed_9_2025-12-02T21-07-48.png
+feed_9 | video30.png : feed_9_2025-12-02T21-07-49.png
+feed_9 | video53.png : feed_9_2025-12-02T21-07-49.png
+feed_9 | video34.png : feed_9_2025-12-02T21-07-50.png
+feed_9 | video67.png : feed_9_2025-12-02T21-07-51.png
+feed_9 | video24.png : feed_9_2025-12-02T21-07-51.png
+feed_9 | video28.png : feed_9_2025-12-02T21-07-52.png
+feed_9 | video71.png : feed_9_2025-12-02T21-07-53.png
+feed_9 | video47.png : feed_9_2025-12-02T21-07-54.png
+feed_9 | video48.png : feed_9_2025-12-02T21-07-55.png
+feed_9 | video50.png : feed_9_2025-12-02T21-07-56.png
+feed_9 | video35.png : feed_9_2025-12-02T21-07-56.png
+feed_9 | video41.png : feed_9_2025-12-02T21-07-57.png
+feed_9 | video59.png : feed_9_2025-12-02T21-07-58.png
+feed_9 | video5.png : feed_9_2025-12-02T21-07-59.png
+feed_9 | video65.png : feed_9_2025-12-02T21-08-00.png
+feed_9 | video20.png : feed_9_2025-12-02T21-08-00.png
+feed_9 | video4.png : feed_9_2025-12-02T21-08-01.png
+feed_9 | video73.png : feed_9_2025-12-02T21-08-02.png
+feed_9 | video55.png : feed_9_2025-12-02T21-08-02.png
+feed_9  finished sending 40 frames
+feed_10  starting stream with  62  frames
+feed_10 | video26.png : feed_10_2025-12-02T21-07-35.png
+feed_10 | video13.png : feed_10_2025-12-02T21-07-36.png
+feed_10 | video11.png : feed_10_2025-12-02T21-07-37.png
+feed_10 | video25.png : feed_10_2025-12-02T21-07-37.png
+feed_10 | video49.png : feed_10_2025-12-02T21-07-38.png
+feed_10 | video8.png : feed_10_2025-12-02T21-07-40.png
+feed_10 | video56.png : feed_10_2025-12-02T21-07-40.png
+feed_10 | video17.png : feed_10_2025-12-02T21-07-41.png
+feed_10 | video21.png : feed_10_2025-12-02T21-07-41.png
+feed_10 | video47.png : feed_10_2025-12-02T21-07-42.png
+feed_10 | video30.png : feed_10_2025-12-02T21-07-42.png
+feed_10 | video41.png : feed_10_2025-12-02T21-07-44.png
+feed_10 | video53.png : feed_10_2025-12-02T21-07-44.png
+feed_10 | video3.png : feed_10_2025-12-02T21-07-45.png
+feed_10 | video15.png : feed_10_2025-12-02T21-07-46.png
+feed_10 | video55.png : feed_10_2025-12-02T21-07-46.png
+feed_10 | video16.png : feed_10_2025-12-02T21-07-47.png
+feed_10 | video39.png : feed_10_2025-12-02T21-07-48.png
+feed_10 | video50.png : feed_10_2025-12-02T21-07-49.png
+feed_10 | video18.png : feed_10_2025-12-02T21-07-49.png
+feed_10 | video54.png : feed_10_2025-12-02T21-07-50.png
+feed_10 | video58.png : feed_10_2025-12-02T21-07-50.png
+feed_10 | video57.png : feed_10_2025-12-02T21-07-51.png
+feed_10 | video36.png : feed_10_2025-12-02T21-07-52.png
+feed_10 | video28.png : feed_10_2025-12-02T21-07-52.png
+feed_10 | video5.png : feed_10_2025-12-02T21-07-53.png
+feed_10 | video52.png : feed_10_2025-12-02T21-07-54.png
+feed_10 | video10.png : feed_10_2025-12-02T21-07-55.png
+feed_10 | video27.png : feed_10_2025-12-02T21-07-56.png
+feed_10 | video31.png : feed_10_2025-12-02T21-07-56.png
+feed_10 | video42.png : feed_10_2025-12-02T21-07-57.png
+feed_10 | video43.png : feed_10_2025-12-02T21-07-57.png
+feed_10 | video59.png : feed_10_2025-12-02T21-07-58.png
+feed_10 | video32.png : feed_10_2025-12-02T21-07-58.png
+feed_10 | video14.png : feed_10_2025-12-02T21-07-59.png
+feed_10 | video44.png : feed_10_2025-12-02T21-08-00.png
+feed_10 | video22.png : feed_10_2025-12-02T21-08-00.png
+feed_10 | video48.png : feed_10_2025-12-02T21-08-01.png
+feed_10 | video51.png : feed_10_2025-12-02T21-08-01.png
+feed_10 | video29.png : feed_10_2025-12-02T21-08-02.png
+feed_10  finished sending 40 frames
+feed_8  starting stream with  145  frames
+feed_8 | video69.png : feed_8_2025-12-02T21-07-35.png
+feed_8 | video28.png : feed_8_2025-12-02T21-07-35.png
+feed_8 | video142.png : feed_8_2025-12-02T21-07-36.png
+feed_8 | video107.png : feed_8_2025-12-02T21-07-37.png
+feed_8 | video88.png : feed_8_2025-12-02T21-07-38.png
+feed_8 | video27.png : feed_8_2025-12-02T21-07-38.png
+feed_8 | video2.png : feed_8_2025-12-02T21-07-39.png
+feed_8 | video24.png : feed_8_2025-12-02T21-07-39.png
+feed_8 | video51.png : feed_8_2025-12-02T21-07-40.png
+feed_8 | video48.png : feed_8_2025-12-02T21-07-41.png
+feed_8 | video54.png : feed_8_2025-12-02T21-07-42.png
+feed_8 | video90.png : feed_8_2025-12-02T21-07-42.png
+feed_8 | video4.png : feed_8_2025-12-02T21-07-43.png
+feed_8 | video68.png : feed_8_2025-12-02T21-07-43.png
+feed_8 | video141.png : feed_8_2025-12-02T21-07-44.png
+feed_8 | video41.png : feed_8_2025-12-02T21-07-46.png
+feed_8 | video29.png : feed_8_2025-12-02T21-07-46.png
+feed_8 | video117.png : feed_8_2025-12-02T21-07-47.png
+feed_8 | video143.png : feed_8_2025-12-02T21-07-47.png
+feed_8 | video125.png : feed_8_2025-12-02T21-07-48.png
+feed_8 | video12.png : feed_8_2025-12-02T21-07-49.png
+feed_8 | video45.png : feed_8_2025-12-02T21-07-49.png
+feed_8 | video110.png : feed_8_2025-12-02T21-07-50.png
+feed_8 | video140.png : feed_8_2025-12-02T21-07-51.png
+feed_8 | video80.png : feed_8_2025-12-02T21-07-51.png
+feed_8 | video101.png : feed_8_2025-12-02T21-07-52.png
+feed_8 | video33.png : feed_8_2025-12-02T21-07-53.png
+feed_8 | video34.png : feed_8_2025-12-02T21-07-53.png
+feed_8 | video10.png : feed_8_2025-12-02T21-07-54.png
+feed_8 | video132.png : feed_8_2025-12-02T21-07-54.png
+feed_8 | video8.png : feed_8_2025-12-02T21-07-55.png
+feed_8 | video13.png : feed_8_2025-12-02T21-07-56.png
+feed_8 | video61.png : feed_8_2025-12-02T21-07-57.png
+feed_8 | video15.png : feed_8_2025-12-02T21-07-58.png
+feed_8 | video138.png : feed_8_2025-12-02T21-08-00.png
+feed_8 | video6.png : feed_8_2025-12-02T21-08-01.png
+feed_8 | video39.png : feed_8_2025-12-02T21-08-01.png
+feed_8 | video44.png : feed_8_2025-12-02T21-08-02.png
+feed_8 | video111.png : feed_8_2025-12-02T21-08-03.png
+feed_8 | video84.png : feed_8_2025-12-02T21-08-04.png
+feed_8  finished sending 40 frames
+feed_7  starting stream with  203  frames
+feed_7 | video39.png : feed_7_2025-12-02T21-07-35.png
+feed_7 | video6.png : feed_7_2025-12-02T21-07-35.png
+feed_7 | video115.png : feed_7_2025-12-02T21-07-36.png
+feed_7 | video75.png : feed_7_2025-12-02T21-07-37.png
+feed_7 | video178.png : feed_7_2025-12-02T21-07-37.png
+feed_7 | video64.png : feed_7_2025-12-02T21-07-38.png
+feed_7 | video112.png : feed_7_2025-12-02T21-07-39.png
+feed_7 | video161.png : feed_7_2025-12-02T21-07-39.png
+feed_7 | video84.png : feed_7_2025-12-02T21-07-40.png
+feed_7 | video82.png : feed_7_2025-12-02T21-07-41.png
+feed_7 | video155.png : feed_7_2025-12-02T21-07-41.png
+feed_7 | video122.png : feed_7_2025-12-02T21-07-42.png
+feed_7 | video88.png : feed_7_2025-12-02T21-07-42.png
+feed_7 | video163.png : feed_7_2025-12-02T21-07-43.png
+feed_7 | video145.png : feed_7_2025-12-02T21-07-43.png
+feed_7 | video170.png : feed_7_2025-12-02T21-07-44.png
+feed_7 | video30.png : feed_7_2025-12-02T21-07-46.png
+feed_7 | video196.png : feed_7_2025-12-02T21-07-46.png
+feed_7 | video29.png : feed_7_2025-12-02T21-07-47.png
+feed_7 | video92.png : feed_7_2025-12-02T21-07-47.png
+feed_7 | video116.png : feed_7_2025-12-02T21-07-48.png
+feed_7 | video126.png : feed_7_2025-12-02T21-07-49.png
+feed_7 | video36.png : feed_7_2025-12-02T21-07-50.png
+feed_7 | video57.png : feed_7_2025-12-02T21-07-51.png
+feed_7 | video72.png : feed_7_2025-12-02T21-07-52.png
+feed_7 | video107.png : feed_7_2025-12-02T21-07-53.png
+feed_7 | video40.png : feed_7_2025-12-02T21-07-54.png
+feed_7 | video110.png : feed_7_2025-12-02T21-07-54.png
+feed_7 | video189.png : feed_7_2025-12-02T21-07-56.png
+feed_7 | video133.png : feed_7_2025-12-02T21-07-56.png
+feed_7 | video192.png : feed_7_2025-12-02T21-07-57.png
+feed_7 | video143.png : feed_7_2025-12-02T21-07-58.png
+feed_7 | video86.png : feed_7_2025-12-02T21-07-59.png
+feed_7 | video136.png : feed_7_2025-12-02T21-07-59.png
+feed_7 | video74.png : feed_7_2025-12-02T21-08-00.png
+feed_7 | video162.png : feed_7_2025-12-02T21-08-00.png
+feed_7 | video173.png : feed_7_2025-12-02T21-08-02.png
+feed_7 | video105.png : feed_7_2025-12-02T21-08-02.png
+feed_7 | video144.png : feed_7_2025-12-02T21-08-03.png
+feed_7 | video130.png : feed_7_2025-12-02T21-08-04.png
+feed_7  finished sending 40 frames
+feed_6  starting stream with  56  frames
+feed_6 | video5.png : feed_6_2025-12-02T21-07-35.png
+feed_6 | video16.png : feed_6_2025-12-02T21-07-35.png
+feed_6 | video37.png : feed_6_2025-12-02T21-07-37.png
+feed_6 | video53.png : feed_6_2025-12-02T21-07-38.png
+feed_6 | video24.png : feed_6_2025-12-02T21-07-39.png
+feed_6 | video52.png : feed_6_2025-12-02T21-07-40.png
+feed_6 | video48.png : feed_6_2025-12-02T21-07-41.png
+feed_6 | video22.png : feed_6_2025-12-02T21-07-42.png
+feed_6 | video10.png : feed_6_2025-12-02T21-07-43.png
+feed_6 | video42.png : feed_6_2025-12-02T21-07-44.png
+feed_6 | video19.png : feed_6_2025-12-02T21-07-45.png
+feed_6 | video21.png : feed_6_2025-12-02T21-07-46.png
+feed_6 | video1.png : feed_6_2025-12-02T21-07-46.png
+feed_6 | video33.png : feed_6_2025-12-02T21-07-47.png
+feed_6 | video31.png : feed_6_2025-12-02T21-07-48.png
+feed_6 | video27.png : feed_6_2025-12-02T21-07-49.png
+feed_6 | video44.png : feed_6_2025-12-02T21-07-50.png
+feed_6 | video15.png : feed_6_2025-12-02T21-07-50.png
+feed_6 | video50.png : feed_6_2025-12-02T21-07-51.png
+feed_6 | video4.png : feed_6_2025-12-02T21-07-51.png
+feed_6 | video14.png : feed_6_2025-12-02T21-07-53.png
+feed_6 | video11.png : feed_6_2025-12-02T21-07-53.png
+feed_6 | video56.png : feed_6_2025-12-02T21-07-54.png
+feed_6 | video38.png : feed_6_2025-12-02T21-07-55.png
+feed_6 | video18.png : feed_6_2025-12-02T21-07-56.png
+feed_6 | video26.png : feed_6_2025-12-02T21-07-56.png
+feed_6 | video55.png : feed_6_2025-12-02T21-07-57.png
+feed_6 | video32.png : feed_6_2025-12-02T21-07-58.png
+feed_6 | video39.png : feed_6_2025-12-02T21-07-59.png
+feed_6 | video23.png : feed_6_2025-12-02T21-07-59.png
+feed_6 | video36.png : feed_6_2025-12-02T21-08-00.png
+feed_6 | video9.png : feed_6_2025-12-02T21-08-01.png
+feed_6 | video29.png : feed_6_2025-12-02T21-08-02.png
+feed_6 | video25.png : feed_6_2025-12-02T21-08-04.png
+feed_6 | video6.png : feed_6_2025-12-02T21-08-04.png
+feed_6 | video35.png : feed_6_2025-12-02T21-08-05.png
+feed_6 | video43.png : feed_6_2025-12-02T21-08-05.png
+feed_6 | video40.png : feed_6_2025-12-02T21-08-06.png
+feed_6 | video54.png : feed_6_2025-12-02T21-08-07.png
+feed_6 | video49.png : feed_6_2025-12-02T21-08-07.png
+feed_6  finished sending 40 frames
+feed_1  starting stream with  83  frames
+feed_1 | video59.png : feed_1_2025-12-02T21-07-35.png
+feed_1 | video26.png : feed_1_2025-12-02T21-07-36.png
+feed_1 | video22.png : feed_1_2025-12-02T21-07-37.png
+feed_1 | video55.png : feed_1_2025-12-02T21-07-38.png
+feed_1 | video29.png : feed_1_2025-12-02T21-07-39.png
+feed_1 | video6.png : feed_1_2025-12-02T21-07-40.png
+feed_1 | video50.png : feed_1_2025-12-02T21-07-41.png
+feed_1 | video3.png : feed_1_2025-12-02T21-07-41.png
+feed_1 | video30.png : feed_1_2025-12-02T21-07-43.png
+feed_1 | video68.png : feed_1_2025-12-02T21-07-44.png
+feed_1 | video79.png : feed_1_2025-12-02T21-07-44.png
+feed_1 | video14.png : feed_1_2025-12-02T21-07-45.png
+feed_1 | video75.png : feed_1_2025-12-02T21-07-46.png
+feed_1 | video21.png : feed_1_2025-12-02T21-07-47.png
+feed_1 | video35.png : feed_1_2025-12-02T21-07-48.png
+feed_1 | video58.png : feed_1_2025-12-02T21-07-49.png
+feed_1 | video43.png : feed_1_2025-12-02T21-07-50.png
+feed_1 | video78.png : feed_1_2025-12-02T21-07-51.png
+feed_1 | video80.png : feed_1_2025-12-02T21-07-52.png
+feed_1 | video70.png : feed_1_2025-12-02T21-07-53.png
+feed_1 | video16.png : feed_1_2025-12-02T21-07-54.png
+feed_1 | video49.png : feed_1_2025-12-02T21-07-54.png
+feed_1 | video18.png : feed_1_2025-12-02T21-07-55.png
+feed_1 | video44.png : feed_1_2025-12-02T21-07-56.png
+feed_1 | video74.png : feed_1_2025-12-02T21-07-57.png
+feed_1 | video81.png : feed_1_2025-12-02T21-07-59.png
+feed_1 | video19.png : feed_1_2025-12-02T21-07-59.png
+feed_1 | video8.png : feed_1_2025-12-02T21-08-00.png
+feed_1 | video10.png : feed_1_2025-12-02T21-08-00.png
+feed_1 | video47.png : feed_1_2025-12-02T21-08-01.png
+feed_1 | video52.png : feed_1_2025-12-02T21-08-01.png
+feed_1 | video15.png : feed_1_2025-12-02T21-08-02.png
+feed_1 | video77.png : feed_1_2025-12-02T21-08-03.png
+feed_1 | video48.png : feed_1_2025-12-02T21-08-03.png
+feed_1 | video69.png : feed_1_2025-12-02T21-08-05.png
+feed_1 | video60.png : feed_1_2025-12-02T21-08-06.png
+feed_1 | video2.png : feed_1_2025-12-02T21-08-06.png
+feed_1 | video38.png : feed_1_2025-12-02T21-08-07.png
+feed_1 | video71.png : feed_1_2025-12-02T21-08-07.png
+feed_1 | video32.png : feed_1_2025-12-02T21-08-08.png
+feed_1  finished sending 40 frames

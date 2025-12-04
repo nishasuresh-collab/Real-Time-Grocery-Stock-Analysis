@@ -1,17 +1,38 @@
+#!/usr/bin/env python3
 import os
+import sys
 import time
 import json
 import torch
 import threading
 from datetime import datetime
 from ultralytics import YOLO
-from src.constants import *
-from src.feed_simulator import run_all_feeds
-from src.helper import clean_dir, reset_log
+import argparse
+
+# -------------------------------------------------------------------
+# FIX 1: Ensure the src/ directory is always importable
+# -------------------------------------------------------------------
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+SRC_DIR = os.path.join(PROJECT_ROOT, "src")
+
+if SRC_DIR not in sys.path:
+    sys.path.insert(0, SRC_DIR)
+
+from constants import *
+from feed_simulator import run_all_feeds
+from helper import clean_dir, reset_log
+# -------------------------------------------------------------------
+
+def parse_args():
+    p = argparse.ArgumentParser()
+    p.add_argument("--output-dir", type=str, default="stream_output_json")
+    p.add_argument("--duration", type=int, default=0)
+    p.add_argument("--rate", type=float, default=1.0)
+    return p.parse_args()
 
 MODEL_PATH = "runs/classify/grozi_cls_v8n_aug10/weights/best.pt"
 UPC_INDEX_PATH = "UPC_index.txt"
-JSON_OUT_DIR = "stream_output_json"
+
 SLEEP_INTERVAL = 1.0
 
 def load_upc_mapping(path):
@@ -30,7 +51,7 @@ def load_upc_mapping(path):
             i += 1
     return mapping
 
-def classify_and_save(model, img_path, upc_map):
+def classify_and_save(model, img_path, upc_map, json_dir):
     try:
         results = model.predict(img_path, imgsz=224, verbose=False)
         preds = results[0].probs
@@ -50,58 +71,68 @@ def classify_and_save(model, img_path, upc_map):
             "class_id": class_id,
             "product_name": product["name"],
             "product_upc": product["upc"],
-            "confidence": round(top_conf, 4)
+            "confidence": round(top_conf, 4),
         }
 
-        os.makedirs(JSON_OUT_DIR, exist_ok=True)
-        json_path = os.path.join(JSON_OUT_DIR, os.path.splitext(os.path.basename(img_path))[0] + ".json")
-        with open(json_path, "w", encoding="utf-8") as f:
+        os.makedirs(json_dir, exist_ok=True)
+        out_path = os.path.join(json_dir, os.path.basename(img_path).replace(".png", ".json"))
+
+        with open(out_path, "w", encoding="utf-8") as f:
             json.dump(output, f, indent=2)
 
         print(f"[Infer] Class {class_id:03d} | {product['name']} | Confidence: {top_conf:.3f}")
 
     except Exception as e:
-        print(f"[Infer] Error processing {img_path}: {e}")
+        print(f"[Infer] ERROR processing {img_path}: {e}")
 
-def inference_watcher(model, upc_map, stop_event):
+def inference_watcher(model, upc_map, stop_event, output_dir, json_dir):
     seen = set()
-    print(f"[Watcher] Watching folder: {OUTPUT_DIR}")
+    print(f"[Watcher] Watching folder: {output_dir}")
     while not stop_event.is_set():
-        imgs = [f for f in os.listdir(OUTPUT_DIR) if f.lower().endswith((".png", ".jpg"))]
-        for img in imgs:
-            img_path = os.path.join(OUTPUT_DIR, img)
+        images = [f for f in os.listdir(output_dir) if f.lower().endswith((".png", ".jpg"))]
+        for img in images:
+            img_path = os.path.join(output_dir, img)
             if img_path not in seen:
-                classify_and_save(model, img_path, upc_map)
+                classify_and_save(model, img_path, upc_map, json_dir)
                 seen.add(img_path)
         time.sleep(SLEEP_INTERVAL)
 
 def main():
+    args = parse_args()
+    json_dir = args.output_dir
+
     clean_dir(OUTPUT_DIR)
     reset_log(LOG_FILE)
-    os.makedirs(JSON_OUT_DIR, exist_ok=True)
+    os.makedirs(json_dir, exist_ok=True)
 
     upc_map = load_upc_mapping(UPC_INDEX_PATH)
-    print(f"Loaded {len(upc_map)} products from UPC_index.txt")
+    print(f"Loaded {len(upc_map)} products")
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model = YOLO(MODEL_PATH)
-    print(f"Using {device.upper()} ({torch.cuda.get_device_name(0) if device=='cuda' else 'CPU only'})")
+    print(f"Using {device.upper()}")
 
     stop_event = threading.Event()
+
     feed_thread = threading.Thread(target=run_all_feeds, daemon=True)
     feed_thread.start()
-    print("[Main] Feed simulation started.")
 
-    inf_thread = threading.Thread(target=inference_watcher, args=(model, upc_map, stop_event), daemon=True)
+    inf_thread = threading.Thread(
+        target=inference_watcher,
+        args=(model, upc_map, stop_event, OUTPUT_DIR, json_dir),
+        daemon=True,
+    )
     inf_thread.start()
-    print("[Main] Inference watcher started.")
 
+    t0 = time.time()
     try:
-        while feed_thread.is_alive():
-            time.sleep(2)
+        while time.time() - t0 < args.duration:
+            time.sleep(1)
     except KeyboardInterrupt:
-        print("\n[Main] Shutting down...")
-        stop_event.set()
+        pass
+
+    stop_event.set()
+    print("[Main] Shutdown complete.")
 
 if __name__ == "__main__":
     main()

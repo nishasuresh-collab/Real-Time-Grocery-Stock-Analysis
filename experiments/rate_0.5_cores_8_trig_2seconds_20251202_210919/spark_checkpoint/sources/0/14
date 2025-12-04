@@ -1,0 +1,3 @@
+v1
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_0.5_cores_8_trig_2seconds_20251202_210919/json_stream/feed_2_2025-12-02T21-09-56.json","timestamp":1764727797047,"batchId":14}
+{"path":"file:///root/Real-Time-Grocery-Stock-Analysis/experiments/rate_0.5_cores_8_trig_2seconds_20251202_210919/json_stream/feed_8_2025-12-02T21-09-56.json","timestamp":1764727797059,"batchId":14}
